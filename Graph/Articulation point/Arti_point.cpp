@@ -28,7 +28,9 @@ void dfs(int node, int par) {
 }
 
 void arti_point() {
-   dfs(1, -1);
+   for (int i = 0; i < nodes; i++) 
+      if(low[i] == -1) dfs(i, -1);
+   // dfs(1, -1);
    // sort(arti.begin(), arti.end());
    cout << "Articulation points : ";
    for (int i : arti) cout << i << "  "; cout << endl;
@@ -55,13 +57,13 @@ int main() {
 /**
 Test Case : 1- 
 6 7
-1 4
-1 2
-4 3
+0 3
+0 1
 3 2
-3 5
-3 6
-5 6
+2 1
+2 4
+2 5
+4 5
 
 Test Case : 2
 4 5
